@@ -8,7 +8,9 @@ class ConfigurationController {
     200 if configuration exists
     404 if configuration doesn't exists
   */
-  get(req, res) {}
+  get(req, res) {
+
+  }
 }
 
 module.exports = ConfigurationController;
