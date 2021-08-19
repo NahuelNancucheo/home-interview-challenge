@@ -1,5 +1,8 @@
-export default function Page(props) {
-  return <div>HELLO</div>;
+export default function Page({data, path, statusCode}) {
+  if(!data) {
+    return <div>ERRORRR</div>
+  }
+  return <div>HELLO this is </div>;
 }
 
 Page.getInitialProps = async (ctx) => {
@@ -7,7 +10,9 @@ Page.getInitialProps = async (ctx) => {
 //const {query:{ path }} = ctx
 const res = await fetch(`http://localhost:3000/configuration/${ctx.query.path}`)
 const json = await res.json()
-console.log(json.data)
+//const statusCode = res.status > 200 ? res.status : false;
+//console.log('holaaaaaaaaaaaaaaa status',statusCode)
+console.log('holaaa data',json.data)
 return {
   data: json.data,
   path: ctx.query.path

@@ -5,8 +5,9 @@ class ConfigurationService {
 
   //id = path name
   getById(id) {
-    const configuration = {};
-    return configuration;
+    console.log('este el el modelo:', this.model,);
+    const configuration = this.model;
+    return configuration[id];
   }
 }
 
